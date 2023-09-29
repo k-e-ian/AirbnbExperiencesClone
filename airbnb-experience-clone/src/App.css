@@ -48,21 +48,28 @@ section {
 .exp--text {
   margin-top: 0;
 }
+
+.card {
+  width: 175px;
+  font-size: 12px;
+  display: flex;          
+  flex-direction: column; 
+  position: relative;
+  flex: 0 0 auto;
+  overflow-y: hidden;
+
+  
+}
+
 .cards-list {
   display: flex;
   flex-wrap: nowrap;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.card {
-  width: 175px;
-  font-size: 12px;
-           
-  display: flex;          
-  flex-direction: column; 
-  position: relative;
-}
+
 
 .card--image {
   width: 100%;
