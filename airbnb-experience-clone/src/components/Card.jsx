@@ -10,14 +10,11 @@ const coverImgToProfilePhoto = {
     "wedding-photography.png": profilePhoto2,
   };
 
-
-
 export default function Card(props) {
     const selectedProfilePhoto = coverImgToProfilePhoto[props.data.coverImg]
     
-
-    console.log(props.data.coverImg)
     let badgeText
+    
     if (props.data.openSpots === 0){
         badgeText = "SOLD OUT"
     } else if (props.data.location === "Online") {
@@ -27,17 +24,25 @@ export default function Card(props) {
     return (
         
         <div className="card">
-            {badgeText && <div className="card--badge">{badgeText}</div>}
-            <img className="card--image" src={selectedProfilePhoto} alt="avatar"/>
+            {
+                badgeText && 
+                <div className="card--badge">{badgeText}</div>
+            }
+            <img 
+                className="card--image" 
+                src={selectedProfilePhoto} 
+                alt="avatar"
+            />
             <div className="card--stats">
                 <img className="card--star" src={star_icon} alt="star-icon"></img>
                 <span>{props.data.stats.rating}</span>
-                <span className="gray">{props.data.stats.reviewCount} &#8226;</span>
+                <span className="gray">({props.data.stats.reviewCount}) &#8226; </span>
                 <span className="gray">{props.data.country}</span>       
             </div>
             <p className="card--title">{props.data.title}</p>
             
-            <p className="card--price"><span className="bold">From ${props.data.price}</span> / person</p> 
+            <p className="card--price"><span className="bold">From ${props.data.price}</span> /
+            person</p> 
         </div>
     ) 
 }
